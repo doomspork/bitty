@@ -7,5 +7,8 @@ defmodule TinyWeb.Router do
 
   scope "/api", TinyWeb do
     pipe_through :api
+
+    post "/urls", UrlController, :create
+    get "/urls/:slug", UrlController, :show
   end
 end

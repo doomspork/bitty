@@ -9,7 +9,7 @@ defmodule Tiny.Factory do
   def url_factory do
     %Url{
       url: sequence(:url, &"https://example.com/#{&1}"),
-      slug: sequence(:slug, &"uniqueslug#{&1}"),
+      slug: sequence(:slug, &"uniqueslug#{&1}")
     }
   end
 end

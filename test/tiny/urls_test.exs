@@ -28,10 +28,6 @@ defmodule Tiny.UrlsTest do
       assert %{id: ^url_id} = Urls.get("abc123")
     end
 
-    test "returns a URL for a given slug regardless of case", %{url: %{id: url_id}} do
-      assert %{id: ^url_id} = Urls.get("ABC123")
-    end
-
     test "returns nil for unknown slugs" do
       assert is_nil(Urls.get("https://example.com/doesnotexist"))
     end

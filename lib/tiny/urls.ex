@@ -20,6 +20,6 @@ defmodule Tiny.Urls do
   """
   @spec get(String.t()) :: Url.t() | nil
   def get(slug) do
-    Repo.get_by(Url, slug: String.downcase(slug))
+    Repo.get_by(Url, slug: slug)
   end
 end
