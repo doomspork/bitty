@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "57e7fdfa-7e73-4c53-9d91-2ac48cf9f620",
+		"name": "Tiny",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Store a new URL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 201', function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test('Content-Type header is application/json', () => {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');",
+							"});",
+							"",
+							"pm.test('Slug is populated', function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData.slug).to.not.be.null;",
+							" ",
+							"    pm.collectionVariables.set('slug', jsonData.slug);",
+							"    pm.collectionVariables.set('url', jsonData.url);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"{{$randomUrl}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/urls",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"urls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve URL by slug",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 200', function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test('Content-Type header is application/json', () => {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');",
+							"});",
+							"",
+							"pm.test('URL is populated', function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData.url).to.not.be.null;",
+							"    const current_url = pm.collectionVariables.get('variable_key');",
+							"    pm.expect(jsonData.url).to.eql(current_url);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/urls{{slug}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"urls{{slug}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Look up missing slug",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status code is 404', function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test('Content-Type header is application/json', () => {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');",
+							"});",
+							"",
+							"pm.test('Error detail is populated', function () {",
+							"    const jsonData = pm.response.json();",
+							"    const error = jsonData.errors.detail;",
+							"    pm.expect(error).to.not.be.null;",
+							"    pm.expect(error).to.eql('this is not the url you\\'re looking for.');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/urls/iknowthisslugdoesnotexist",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"urls",
+						"iknowthisslugdoesnotexist"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1f3c46c1-1f62-4b5c-bb89-dc376b0aa3da",
+			"key": "host",
+			"value": "http://localhost:4000"
+		},
+		{
+			"id": "7290c85f-7c03-46ae-871c-eb3e80883de7",
+			"key": "slug",
+			"value": ""
+		},
+		{
+			"id": "3810deab-b098-439a-b138-97ec08d5a112",
+			"key": "url",
+			"value": ""
+		}
+	]
+}
