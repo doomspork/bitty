@@ -1,4 +1,8 @@
 defmodule Tiny.Schemas.Url do
+  @moduledoc """
+  Schema representing a URL in our system
+  """
+
   use Ecto.Schema
 
   import Ecto.Changeset

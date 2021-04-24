@@ -1,5 +1,6 @@
 defmodule Tiny.Urls do
   @moduledoc """
+  Encapsulates our database interactions and business logic for URLs
   """
 
   alias Tiny.Schemas.Url
