@@ -41,7 +41,8 @@ defmodule Tiny.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:ex_machina, ">= 0.0.0", only: :test}
+      {:ex_machina, ">= 0.0.0", only: :test},
+      {:credo, ">= 0.0.0", only: :dev},
     ]
   end
 
