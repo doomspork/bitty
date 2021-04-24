@@ -35,6 +35,7 @@ defmodule Tiny.MixProject do
     [
       {:phoenix, "~> 1.5.3"},
       {:phoenix_ecto, "~> 4.1"},
+      {:cors_plug, "~> 2.0"},
       {:ecto_sql, "~> 3.4"},
       {:postgrex, ">= 0.0.0"},
       {:telemetry_metrics, "~> 0.4"},
@@ -42,7 +43,7 @@ defmodule Tiny.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:ex_machina, ">= 0.0.0", only: :test},
-      {:credo, ">= 0.0.0", only: :dev},
+      {:credo, ">= 0.0.0", only: :dev}
     ]
   end
 
