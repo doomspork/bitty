@@ -1,13 +1,13 @@
-defmodule TinyWeb.FallbackController do
+defmodule BittyWeb.FallbackController do
   @moduledoc """
   Could we do without this and move the logic into the UrlController? Absolutely.
 
   This is a personal choice because I like keeping my controllers clean and
   focused on the positive case.
   """
-  use TinyWeb, :controller
+  use BittyWeb, :controller
 
-  alias TinyWeb.ErrorView
+  alias BittyWeb.ErrorView
 
   @doc """
   This occurs when `Urls.get/1` is used with slug that does not exist

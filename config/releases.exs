@@ -7,7 +7,7 @@ secret_key_base =
     You can generate one by calling: mix phx.gen.secret
     """
 
-config :school_house, TinyWeb.Endpoint,
+config :school_house, BittyWeb.Endpoint,
   http: [
     port: String.to_integer(System.get_env("PORT") || "442"),
     transport_options: [socket_opts: [:inet6]]

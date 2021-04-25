@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :tiny,
-  ecto_repos: [Tiny.Repo]
+config :bitty,
+  ecto_repos: [Bitty.Repo]
 
 # Configures the endpoint
-config :tiny, TinyWeb.Endpoint,
+config :bitty, BittyWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "aB8CU8KjjenKXueB9JwL0Zy6ePPCKygNCwH2V30y7lU/EGfTq5ZSU1aMcO9J8P/6",
-  render_errors: [view: TinyWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Tiny.PubSub,
+  render_errors: [view: BittyWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Bitty.PubSub,
   live_view: [signing_salt: "2hXyByqs"]
 
 # Configures Elixir's Logger

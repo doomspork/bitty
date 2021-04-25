@@ -1,9 +1,9 @@
-defmodule TinyWeb.UrlController do
-  use TinyWeb, :controller
+defmodule BittyWeb.UrlController do
+  use BittyWeb, :controller
 
-  alias Tiny.Urls
+  alias Bitty.Urls
 
-  action_fallback TinyWeb.FallbackController
+  action_fallback BittyWeb.FallbackController
 
   def create(conn, params) do
     with {:ok, url} <- Urls.create(params) do

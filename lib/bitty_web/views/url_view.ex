@@ -1,5 +1,5 @@
-defmodule TinyWeb.UrlView do
-  use TinyWeb, :view
+defmodule BittyWeb.UrlView do
+  use BittyWeb, :view
 
   @doc """
   Return a _very_ simple JSON object

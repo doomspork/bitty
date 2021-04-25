@@ -1,4 +1,4 @@
-defmodule Tiny.Application do
+defmodule Bitty.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,27 +8,27 @@ defmodule Tiny.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Tiny.Repo,
+      Bitty.Repo,
       # Start the Telemetry supervisor
-      TinyWeb.Telemetry,
+      BittyWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Tiny.PubSub},
+      {Phoenix.PubSub, name: Bitty.PubSub},
       # Start the Endpoint (http/https)
-      TinyWeb.Endpoint
-      # Start a worker by calling: Tiny.Worker.start_link(arg)
-      # {Tiny.Worker, arg}
+      BittyWeb.Endpoint
+      # Start a worker by calling: Bitty.Worker.start_link(arg)
+      # {Bitty.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Tiny.Supervisor]
+    opts = [strategy: :one_for_one, name: Bitty.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    TinyWeb.Endpoint.config_change(changed, removed)
+    BittyWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

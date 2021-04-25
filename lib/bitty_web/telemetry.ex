@@ -1,4 +1,4 @@
-defmodule TinyWeb.Telemetry do
+defmodule BittyWeb.Telemetry do
   @moduledoc false
 
   use Supervisor
@@ -33,11 +33,11 @@ defmodule TinyWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("tiny.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("tiny.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("tiny.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("tiny.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("tiny.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("bitty.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("bitty.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("bitty.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("bitty.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("bitty.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -51,7 +51,7 @@ defmodule TinyWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {TinyWeb, :count_users, []}
+      # {BittyWeb, :count_users, []}
     ]
   end
 end

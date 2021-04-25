@@ -1,4 +1,4 @@
-defmodule Tiny.DataCase do
+defmodule Bitty.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule Tiny.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use Tiny.DataCase, async: true`, although
+  by setting `use Bitty.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule Tiny.DataCase do
 
   using do
     quote do
-      alias Tiny.Repo
+      alias Bitty.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Tiny.DataCase
+      import Bitty.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Tiny.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bitty.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Tiny.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Bitty.Repo, {:shared, self()})
     end
 
     :ok

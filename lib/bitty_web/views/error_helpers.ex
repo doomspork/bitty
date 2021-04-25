@@ -1,4 +1,4 @@
-defmodule TinyWeb.ErrorHelpers do
+defmodule BittyWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """

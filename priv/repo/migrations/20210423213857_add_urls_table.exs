@@ -1,4 +1,4 @@
-defmodule Tiny.Repo.Migrations.AddUrlsTable do
+defmodule Bitty.Repo.Migrations.AddUrlsTable do
   use Ecto.Migration
 
   def change do

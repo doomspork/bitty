@@ -1,4 +1,4 @@
-# Tiny
+# Bitty
 
 > Let's keep things short
 
@@ -67,3 +67,11 @@ $ mix credo
 ```
 
 With tests passing, code formatted, and Credo happy it's time to commit!
+
+## Deployments
+
+Docker and Heroku's container stack were used to deploy this. The deployment target could be updated to elsewhere easy enough.
+
+## Continous Integration & Delivery
+
+GitHub Actions.
