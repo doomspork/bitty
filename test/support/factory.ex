@@ -1,10 +1,10 @@
-defmodule Tiny.Factory do
+defmodule Bitty.Factory do
   @moduledoc """
   Home to our ExMachina factories
   """
-  use ExMachina.Ecto, repo: Tiny.Repo
+  use ExMachina.Ecto, repo: Bitty.Repo
 
-  alias Tiny.Schemas.Url
+  alias Bitty.Schemas.Url
 
   def url_factory do
     %Url{

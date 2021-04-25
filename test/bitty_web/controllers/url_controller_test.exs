@@ -1,7 +1,7 @@
-defmodule TinyWeb.UrlControllerTest do
-  use TinyWeb.ConnCase
+defmodule BittyWeb.UrlControllerTest do
+  use BittyWeb.ConnCase
 
-  import Tiny.Factory
+  import Bitty.Factory
 
   describe "create/2" do
     test "returns a JSON representation of our stored URL", %{conn: conn} do

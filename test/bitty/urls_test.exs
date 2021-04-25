@@ -1,10 +1,10 @@
-defmodule Tiny.UrlsTest do
-  use Tiny.DataCase
+defmodule Bitty.UrlsTest do
+  use Bitty.DataCase
 
-  import Tiny.Factory
+  import Bitty.Factory
 
-  alias Tiny.Urls
-  alias Tiny.Schemas.Url
+  alias Bitty.Urls
+  alias Bitty.Schemas.Url
 
   describe "create/1" do
     test "returns a new record with slug for valid url" do

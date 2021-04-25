@@ -35,8 +35,8 @@ RUN chown nobody:nobody /app
 
 USER nobody:nobody
 
-COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/tiny ./
+COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/bitty ./
 
 ENV HOME=/app
 
-CMD ["bin/tiny", "start"]
+CMD ["bin/bitty", "start"]

@@ -1,16 +1,16 @@
-defmodule TinyWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :tiny
+defmodule BittyWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :bitty
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_tiny_key",
+    key: "_bitty_key",
     signing_salt: "S6rVqv16"
   ]
 
-  socket "/socket", TinyWeb.UserSocket,
+  socket "/socket", BittyWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -20,7 +20,7 @@ defmodule TinyWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :tiny,
+    from: :bitty,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule TinyWeb.Endpoint do
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :tiny
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :bitty
   end
 
   plug Plug.RequestId
@@ -43,5 +43,5 @@ defmodule TinyWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug TinyWeb.Router
+  plug BittyWeb.Router
 end

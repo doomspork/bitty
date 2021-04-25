@@ -1,4 +1,4 @@
-defmodule TinyWeb.ConnCase do
+defmodule BittyWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule TinyWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use TinyWeb.ConnCase, async: true`, although
+  by setting `use BittyWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule TinyWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import TinyWeb.ConnCase
+      import BittyWeb.ConnCase
 
-      alias TinyWeb.Router.Helpers, as: Routes
+      alias BittyWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint TinyWeb.Endpoint
+      @endpoint BittyWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Tiny.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Bitty.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Tiny.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Bitty.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

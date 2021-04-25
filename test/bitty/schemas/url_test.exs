@@ -1,7 +1,7 @@
-defmodule Tiny.Schemas.UrlTest do
-  use Tiny.DataCase
+defmodule Bitty.Schemas.UrlTest do
+  use Bitty.DataCase
 
-  alias Tiny.Schemas.Url
+  alias Bitty.Schemas.Url
 
   describe "changeset/1" do
     test "returns a valid changeset with a unique slug" do

@@ -1,9 +1,9 @@
-defmodule Tiny.MixProject do
+defmodule Bitty.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :tiny,
+      app: :bitty,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Tiny.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Tiny.Application, []},
+      mod: {Bitty.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

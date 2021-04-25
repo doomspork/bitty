@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :tiny, Tiny.Repo,
+config :bitty, Bitty.Repo,
   username: "postgres",
   password: "postgres",
-  database: "tiny_dev",
+  database: "bitty_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :tiny, Tiny.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :tiny, TinyWeb.Endpoint,
+config :bitty, BittyWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

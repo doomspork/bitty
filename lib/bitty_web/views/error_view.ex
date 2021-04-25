@@ -1,8 +1,8 @@
-defmodule TinyWeb.ErrorView do
-  use TinyWeb, :view
+defmodule BittyWeb.ErrorView do
+  use BittyWeb, :view
 
   @doc """
-  See comment in TinyWeb.UrlView RE: simplicity. 
+  See comment in BittyWeb.UrlView RE: simplicity.
   """
   def render("error.json", %{error: error}) do
     %{errors: %{detail: error}}

@@ -1,12 +1,12 @@
-defmodule TinyWeb do
+defmodule BittyWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use TinyWeb, :controller
-      use TinyWeb, :view
+      use BittyWeb, :controller
+      use BittyWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,18 +19,18 @@ defmodule TinyWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: TinyWeb
+      use Phoenix.Controller, namespace: BittyWeb
 
       import Plug.Conn
-      alias TinyWeb.Router.Helpers, as: Routes
+      alias BittyWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/tiny_web/templates",
-        namespace: TinyWeb
+        root: "lib/bitty_web/templates",
+        namespace: BittyWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -61,8 +61,8 @@ defmodule TinyWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import TinyWeb.ErrorHelpers
-      alias TinyWeb.Router.Helpers, as: Routes
+      import BittyWeb.ErrorHelpers
+      alias BittyWeb.Router.Helpers, as: Routes
     end
   end
 

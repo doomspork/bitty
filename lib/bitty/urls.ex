@@ -1,10 +1,10 @@
-defmodule Tiny.Urls do
+defmodule Bitty.Urls do
   @moduledoc """
   Encapsulates our database interactions and business logic for URLs
   """
 
-  alias Tiny.Schemas.Url
-  alias Tiny.Repo
+  alias Bitty.Schemas.Url
+  alias Bitty.Repo
 
   @doc """
   Persist a given URL and return the new record including unique slug

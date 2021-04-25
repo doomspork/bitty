@@ -1,5 +1,5 @@
-defmodule Tiny.Repo do
+defmodule Bitty.Repo do
   use Ecto.Repo,
-    otp_app: :tiny,
+    otp_app: :bitty,
     adapter: Ecto.Adapters.Postgres
 end

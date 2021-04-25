@@ -1,4 +1,4 @@
-defmodule Tiny.Schemas.Url do
+defmodule Bitty.Schemas.Url do
   @moduledoc """
   Schema representing a URL in our system
   """
@@ -7,7 +7,7 @@ defmodule Tiny.Schemas.Url do
 
   import Ecto.Changeset
 
-  alias Tiny.Repo
+  alias Bitty.Repo
   alias __MODULE__, as: Url
 
   schema "urls" do
