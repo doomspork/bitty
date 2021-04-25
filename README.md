@@ -1,6 +1,9 @@
+
 # Bitty
 
-> Let's keep things short
+> The IttyBitty URL shortener.
+
+The Bitty in [Itty](https://github.com/doomspork/itty)Bitty.
 
 ## Local Development
 
