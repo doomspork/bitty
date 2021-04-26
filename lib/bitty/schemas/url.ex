@@ -10,6 +10,8 @@ defmodule Bitty.Schemas.Url do
   alias Bitty.Repo
   alias __MODULE__, as: Url
 
+  @tokens String.split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", "")
+
   schema "urls" do
     field :slug, :string
     field :url, :string
@@ -27,10 +29,7 @@ defmodule Bitty.Schemas.Url do
   end
 
   defp generate_slug do
-    6
-    |> :crypto.strong_rand_bytes()
-    |> Base.url_encode64()
-    |> binary_part(0, 6)
+    for _x <- 0..8, do: Enum.random(@tokens), into: ""
   end
 
   defp generate_unsafe_unqiue_slug(changeset) do
