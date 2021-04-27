@@ -5,6 +5,7 @@ defmodule BittyWeb.UrlController do
 
   action_fallback BittyWeb.FallbackController
 
+  @spec create(Plug.Conn.t(), map()) :: Plug.Conn.t()
   def create(conn, params) do
     with {:ok, url} <- Urls.create(params) do
       conn
@@ -13,6 +14,7 @@ defmodule BittyWeb.UrlController do
     end
   end
 
+  @spec show(Plug.Conn.t(), map()) :: Plug.Conn.t()
   def show(conn, %{"slug" => slug}) do
     with %{} = url <- Urls.get(slug) do
       render(conn, "show.json", url: url)
