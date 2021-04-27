@@ -42,8 +42,11 @@ defmodule Bitty.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:ex_machina, ">= 0.0.0", only: :test},
-      {:credo, ">= 0.0.0", only: :dev}
+
+      # Development & Test dependencies
+      {:credo, ">= 0.0.0", only: :dev},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:ex_machina, ">= 0.0.0", only: :test}
     ]
   end
 

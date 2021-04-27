@@ -12,6 +12,11 @@ defmodule Bitty.Schemas.Url do
 
   @tokens String.split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", "")
 
+  @type t :: %Url{
+          slug: String.t(),
+          url: String.t()
+        }
+
   schema "urls" do
     field :slug, :string
     field :url, :string
@@ -19,6 +24,7 @@ defmodule Bitty.Schemas.Url do
     timestamps(updated_at: false)
   end
 
+  @spec changeset(map()) :: Ecto.Changeset.t()
   def changeset(attrs) do
     %Url{}
     |> cast(attrs, [:url])
