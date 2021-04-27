@@ -1,9 +1,9 @@
-
 # Bitty
 
 > The IttyBitty URL shortener.
 
-The Bitty in [Itty](https://github.com/doomspork/itty)Bitty.
+Bitty is a Phoenix Framework powered URL Shortener. This project is an example of migrating a React/API pairing to
+a LiveView application.
 
 ## Local Development
 
