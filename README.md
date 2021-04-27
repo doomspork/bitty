@@ -26,7 +26,7 @@ $ mix deps.get
 $ mix compile
 ```
 
-### Setuping up our database
+### Setting up our database
 
 Now that we've fetched our dependencies and compiled our project, we can leverage our Mix tasks to do the hard work for us; included with Phoenix is a useful alias we can use here:
 
