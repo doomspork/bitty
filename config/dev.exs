@@ -64,6 +64,7 @@ config :bitty, BittyWeb.Endpoint,
       ~r"lib/bitty_web/templates/.*(eex)$"
     ]
   ]
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 

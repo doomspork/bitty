@@ -9,6 +9,7 @@ defmodule BittyWeb.PageLive do
     {:ok, assign(socket, changeset: changeset, short_url: nil)}
   end
 
+  @impl true
   def handle_event("save", %{"url" => params}, socket) do
     changeset = Urls.create_url_changeset(params)
 
