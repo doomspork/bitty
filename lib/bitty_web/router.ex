@@ -18,6 +18,7 @@ defmodule BittyWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    get "/:slug", RedirectController, :external
   end
 
   # Other scopes may use custom stacks.
