@@ -1,4 +1,5 @@
 defmodule BittyWeb.PageLive do
+  @moduledoc false
   use BittyWeb, :live_view
 
   alias Bitty.Urls

@@ -1,4 +1,5 @@
 defmodule BittyWeb.FormComponent do
+  @moduledoc false
   use BittyWeb, :live_component
 
   def render(assigns) do
