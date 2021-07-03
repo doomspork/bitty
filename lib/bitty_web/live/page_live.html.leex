@@ -1,0 +1,13 @@
+<div class="py-16 bg-white sm:py-24">
+  <div class="relative sm:py-16">
+    <div class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="relative px-6 py-10 overflow-hidden bg-blue-400 shadow-xl rounded-2xl sm:px-12 sm:py-20">
+        <%= if @short_url do %>
+          <%= live_component(@socket, BittyWeb.SuccessComponent, short_url: @short_url) %>
+        <% else %>
+          <%= live_component(@socket, BittyWeb.FormComponent, changeset: @changeset) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

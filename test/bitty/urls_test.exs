@@ -14,7 +14,7 @@ defmodule Bitty.UrlsTest do
     test "returns errors when url is invalid" do
       {:error, changeset} = Urls.create(%{"url" => "wss://example.com/iamawebsocketdidyouknow"})
 
-      assert %{url: ["has invalid format"]} = errors_on(changeset)
+      assert %{url: ["Only HTTP/HTTPS URLs are supported at this time."]} = errors_on(changeset)
     end
   end
 

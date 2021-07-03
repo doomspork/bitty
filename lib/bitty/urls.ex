@@ -17,6 +17,14 @@ defmodule Bitty.Urls do
   end
 
   @doc """
+  Allows our LiveView to create a changeset for its `form_for` tag
+  """
+  @spec create_url_changeset(map()) :: Ecto.Changeset.t()
+  def create_url_changeset(params \\ %{}) do
+    Url.changeset(params, false)
+  end
+
+  @doc """
   Retrieve a URL given the slug
   """
   @spec get(String.t()) :: Url.t() | nil

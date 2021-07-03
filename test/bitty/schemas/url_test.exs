@@ -12,7 +12,7 @@ defmodule Bitty.Schemas.UrlTest do
     end
 
     test "returns errors when url is invalid" do
-      assert %{url: ["has invalid format"]} =
+      assert %{url: ["Only HTTP/HTTPS URLs are supported at this time."]} =
                %{url: "wss://example.com/iamawebsocketdidyouknow"}
                |> Url.changeset()
                |> errors_on()
